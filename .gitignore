@@ -1,0 +1,24 @@
+# Downloaded models (several GB)
+/models/
+
+# Vendored whisper.cpp clone and its build tree
+/vendor/
+
+# Python environments
+/.venv/
+/.venv-qt/
+__pycache__/
+*.py[cod]
+
+# Runtime state
+/logs/
+/run/
+*.log
+*.pid
+
+# Test media
+/test/*.wav
+/test/movie.mp4
+
+# Downloaded Argos packages
+*.argosmodel

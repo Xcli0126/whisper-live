@@ -212,7 +212,7 @@ flowchart LR
 |---|---|---|
 | `ASR_ENGINE` | `auto` | 编译好 whisper.cpp 且 ggml 模型存在时用 `gpu`；`cpu` 强制 WhisperLiveKit |
 | `LAN` | `en` | 传给识别器的源语言，`auto` 开自动检测 |
-| `LANGS` | `en,zh` | 翻译对；两个值相同时不翻译 |
+| `LANGS` | `en,zh` | 翻译对；两个值相同时不翻译。源语言以 `zh` 开头时自动变成 `zh,zh` |
 | `LATENCY` | `balanced` | `stable`、`balanced`、`fast` |
 | `MT` | `local` | `local`、`argos`、`auto`、`mymemory` |
 | `MT_DEBOUNCE` | 本地 0.05，其他 0.4 | 一句提交后等多久再翻译 |
@@ -229,8 +229,7 @@ flowchart LR
 例子：
 
 ```bash
-LAN=ja LANGS=ja,zh ./run.sh
-LAN=auto LANGS=auto,zh ./run.sh     # 让识别器判断语言
+LAN=zh ./run.sh                      # 中文源，单行，不翻译
 ASR_ENGINE=cpu MODEL_DIR=models/faster-whisper-medium ./run.sh
 OV=0 ./run.sh                        # 只开浏览器页
 ```

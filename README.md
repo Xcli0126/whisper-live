@@ -228,7 +228,7 @@ committing, is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 |---|---|---|
 | `ASR_ENGINE` | `auto` | `gpu` uses whisper.cpp when it is built and the ggml model exists; `cpu` forces WhisperLiveKit |
 | `LAN` | `en` | Source language given to the recognizer; `auto` enables detection |
-| `LANGS` | `en,zh` | Translation pair; equal values disable translation |
+| `LANGS` | `en,zh` | Translation pair; equal values disable translation. A source starting with `zh` forces `zh,zh` |
 | `LATENCY` | `balanced` | `stable`, `balanced` or `fast` |
 | `MT` | `local` | `local`, `argos`, `auto` or `mymemory` |
 | `MT_DEBOUNCE` | 0.05 local, 0.4 otherwise | Seconds to wait before translating a line |
@@ -245,8 +245,7 @@ Overlay-only variables: `SNAP_URL`, `BOTTOM_MARGIN` (default 60 px), `OVERLAY_CO
 Examples:
 
 ```bash
-LAN=ja LANGS=ja,zh ./run.sh
-LAN=auto LANGS=auto,zh ./run.sh     # let the recognizer detect the language
+LAN=zh ./run.sh                      # Chinese source, one line, no translation
 ASR_ENGINE=cpu MODEL_DIR=models/faster-whisper-medium ./run.sh
 OV=0 ./run.sh                        # browser page only
 ```

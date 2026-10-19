@@ -10,9 +10,9 @@ check, so the failing section tells you where to look next.
 == 服务 ==
 [ok]   识别服务 :8100
 [ok]   字幕页 :8300
-[ok]   桌面浮层 overlay.py
+[ok]   桌面浮层 overlay.py（盖在所有窗口上）
 == 识别后端 ==
-[ok]   显卡后端可用：whisper-turbo（whisper.cpp + HIP）
+[ok]   显卡后端可用：whisper-turbo（whisper.cpp + HIP，run.sh 会优先选它）
 [ok]   ROCm 设备已识别
 ...
 ```
@@ -162,7 +162,7 @@ tail -n 5 logs/screen.log
 `status.sh` reports one of:
 
 ```text
-[ok]   显卡后端可用：whisper-turbo（whisper.cpp + HIP）
+[ok]   显卡后端可用：whisper-turbo（whisper.cpp + HIP，run.sh 会优先选它）
 [warn] 显卡后端未装（跑 ./build-gpu.sh），将使用 CPU
 [warn] whisper.cpp 没看见 ROCm 设备，可能只会在 CPU 上跑
 ```

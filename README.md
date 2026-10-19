@@ -25,8 +25,8 @@ browser tab. No file path, meeting URL or player plugin is involved.
   faster-whisper on the CPU.
 - **Sentence-level captions.** A line appears when the sentence ends, not word by word. Once
   a line is on screen it is not rewritten; the Chinese translation arrives with it.
-- **Local translation by default.** opus-mt-en-zh runs on the CPU, around 0.1–0.15 s per
-  sentence, and no text leaves the machine. MyMemory cloud polish is optional.
+- **Local translation by default.** opus-mt-en-zh runs on the CPU, about 0.1 s per sentence
+  (0.06–0.12 s measured once loaded), and no text leaves the machine. MyMemory cloud polish is optional.
 - **An overlay above fullscreen video.** Frameless Qt window, always on top, clicks pass
   through to the player underneath. Mask, font scale, dwell time and position are adjustable.
 - **A browser page as well.** <http://127.0.0.1:8300> shows the same captions with history and
@@ -160,7 +160,7 @@ It does not change recognition itself.
 | Fast | `fast` | The unfinished sentence too, rewritten every 0.45 s as recognition changes its mind | Immediate, visibly unstable |
 
 With the default `MT=local` the three modes feel nearly identical: the local translation lands
-about 0.1–0.15 s after the sentence is committed, well inside every deadline. The differences
+about 0.1 s after the sentence is committed, well inside every deadline. The differences
 show up when cloud polish is enabled, or in fast mode's partial line.
 
 ```bash

@@ -12,7 +12,7 @@ First public release.
 - GPU path with silero VAD sentence splitting, partial decodes every 0.45 s, and a two-decode
   agreement rule before a sentence is committed. Punctuation-insensitive prefix comparison
   keeps a finished sentence from waiting for the end of a paragraph.
-- English → Chinese translation with opus-mt-en-zh (about 0.1–0.15 s per sentence), Argos
+- English → Chinese translation with opus-mt-en-zh (0.06–0.12 s per sentence once loaded), Argos
   CTranslate2 packages as fallback, optional MyMemory polish, OpenCC traditional-to-simplified
   conversion, and punctuation cleanup.
 - Sentence-at-a-time caption publishing: the Chinese and English lines change together, in
